@@ -30,10 +30,10 @@ Uma SPA (Single Page Application) que permite:
 
 ```bash
 # Instalar dependências
-npm install
+yarn install
 
 # Rodar em desenvolvimento
-npm run dev
+yarn run dev
 ```
 
 Acesse: `http://localhost:5173`

@@ -11,12 +11,32 @@ test('test', async ({ page }) => {
   
   //Act - Ação
   await page.getByTestId('search-order-id').fill('VLO-FFITWU') 
-  await page.getByTestId('search-order-button').click() 
+  //await page.getByTestId('search-order-button').click() 
+  await page.getByRole('button', { name: 'Buscar Pedido' }).click() 
+
   //Assert - Verificação  
-  await expect(page.getByTestId('order-result-id')).toBeVisible() 
-  await expect(page.getByTestId('order-result-id')).toContainText('VLO-FFITWU') 
-  await expect(page.getByTestId('order-result-status')).toBeVisible() 
-  await expect(page.getByTestId('order-result-status')).toContainText('APROVADO') 
+
+  //DESAFIO - Remover os dois datatestes order-result-id e order-result-status do arquivo OrderLookup.tsx
+  //e automatizar o teste para verificar se o pedido foi aprovado
+  
+ 
+  await expect(page.getByText('VLO-FFITWU')).toBeVisible();
+  await expect(page.getByTestId('order-result-VLO-FFITWU')).toContainText('VLO-FFITWU');
+  //await expect(page.getByText('VLO-FFITWU')).toBeVisible();
+  await expect(page.getByTestId('order-result-VLO-FFITWU')).toContainText('APROVADO');
+
+  
+  
+  
+  
+ // await expect(page.getByTestId('order-result-id')).toBeVisible({timeout: 30000}) 
+  //await expect(page.getByTestId('order-result-id')).toContainText('VLO-FFITWU') 
+
+  
+  //await expect(page.getByTestId('order-result-status')).toBeVisible() 
+  //await expect(page.getByTestId('order-result-status')).toContainText('APROVADO') 
+
+
 
 
 }) 
