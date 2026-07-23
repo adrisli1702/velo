@@ -25,10 +25,8 @@ test('test', async ({ page }) => {
   //await expect(page.getByText('VLO-FFITWU')).toBeVisible();
   await expect(page.getByTestId('order-result-VLO-FFITWU')).toContainText('APROVADO');
 
-  
-  
-  
-  
+   
+   
  // await expect(page.getByTestId('order-result-id')).toBeVisible({timeout: 30000}) 
   //await expect(page.getByTestId('order-result-id')).toContainText('VLO-FFITWU') 
 
